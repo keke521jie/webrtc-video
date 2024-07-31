@@ -1,0 +1,13 @@
+.videoList {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  .videoItem {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.pickBorder{
+    border: 3px solid rgba(7, 124, 234, 0.423) !important;
+}
