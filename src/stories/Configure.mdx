@@ -1,0 +1,42 @@
+import { Meta } from "@storybook/blocks";
+
+
+<Meta title="快速开始" />
+
+<div className="webrtc-video">
+    # 基于WebRtc的播放器
+    ---
+    ### 注意
+    ```tsx
+    // video有关的组件都依赖于 ZLMRTCClient.js 首先应该在index.html中引入
+
+    <script type="text/javascript" src="http://my.zsyou.top/2024/ZLMRTCClient.js"></script>
+
+    // video有关的标签默认宽高等于父组件宽高，需要在外层包裹一个有宽高的容器 
+    <div style={width:"800px",height:"500px"}>
+        <VideoPlay
+            headers={{
+                Authorization: 'token ******************'
+            }}
+            id="*********************"
+            logo={<img src="/src/assets/react.svg" style={{width: '30%'}}/>}
+            muted
+            title="webrtc-play"
+            url="https://nvp.hswl007.com/api/wvp/play/webrtc?deviceId=GK1237954341113422&channelId=GK1237954341113422"
+        />
+    </div>
+    ```
+    ---
+    ### 安装
+    ```ts
+    // 使用喜欢的包管理器安装
+    npm i webrtc-video
+    cnpm i webrtc-video
+    yarn add webrtc-video
+    ```
+    然后就可以在项目中使用了
+</div>
+
+<style>
+  
+</style>

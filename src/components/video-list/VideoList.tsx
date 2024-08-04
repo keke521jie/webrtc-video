@@ -1,10 +1,17 @@
-import React from 'react';
+import React from "react";
 import { forwardRef, useEffect, useImperativeHandle, useState } from "react";
-import styles from "./style/VideoList.module.scss";
+import styles from "../styles/VideoList.module.scss";
 import Video, { VideoProps } from "../video-player/Video";
 
 export interface VideoListProps extends Omit<VideoProps, "id" | "url"> {
+  /**
+   * 屏幕数量
+   */
   count: 1 | 4 | 9 | 16;
+  /**
+   * 该函数是在点击某个video实例时候组件帮你调用的，你可以在该函数体内获取到video的一些信息进行操作
+   * @param curVideo 组件会将video实例的信息传递给这参数，
+   */
   videoUpdate?: (curVideo: VideoObj) => void; // 负责给父组件当前选中的播放实例
 }
 
@@ -21,7 +28,7 @@ export interface PlayerHandle {
   clearVideoList: () => void;
 }
 
-export default forwardRef(function VideoList(
+const VideoList = forwardRef(function VideoList(
   props: VideoListProps,
   ref: React.ForwardedRef<PlayerHandle>
 ) {
@@ -128,3 +135,5 @@ export default forwardRef(function VideoList(
     </ul>
   );
 });
+VideoList.displayName = "VideoList";
+export default VideoList;
